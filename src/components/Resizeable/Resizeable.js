@@ -33,6 +33,7 @@ export default class ResizeableWrapper extends React.Component {
 
   handleMouseDown = event => {
     event.preventDefault();
+
     this.setState({
       ...this.state,
       dragStartX: event.pageX,
@@ -43,6 +44,7 @@ export default class ResizeableWrapper extends React.Component {
   handleMouseMove = event => {
     event.preventDefault();
     if (!this.state.dragStartX || !this.state.isDragging) return;
+    
     this.setState({
       ...this.state,
       dragEndX: event.pageX,
@@ -53,6 +55,7 @@ export default class ResizeableWrapper extends React.Component {
   handleMouseUp = event => {
     event.preventDefault();
     if (!this.state.dragStartX || !this.state.isDragging) return;
+
     const newWidth = this.calculateWidthChange(event.pageX);
     this.setState({
       ...this.state,

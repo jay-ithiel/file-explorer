@@ -11,16 +11,18 @@ export default class File extends React.Component {
     return (
       <li>
         <AppConsumer>
-          {({ data, updateActiveId }) => {
-            const activeClass = data.activeId === id ? 'active' : '';
-            const handleClick = () => updateActiveId(id);
-            return (
-              <div className={ activeClass } onClick={ handleClick }>
-                <FileIcon />
-                <h3>{ this.props.file.name }</h3>
-              </div>
-            );
-          }}
+          {
+            ({ data, updateActiveId }) => {
+              const activeClass = data.activeId === id ? 'active' : '';
+              const handleClick = () => updateActiveId(id);
+              return (
+                <div className={ activeClass } onClick={ handleClick }>
+                  <FileIcon />
+                  <h3>{ this.props.file.name }</h3>
+                </div>
+              );
+            }
+          }
         </AppConsumer>
       </li>
     );
