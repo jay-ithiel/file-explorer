@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-
+import File from '../File';
+import Folder from '../Folder';
 
 const FolderContent = ({ content }) => {
   const { children } = content;
@@ -16,7 +17,11 @@ const FolderContent = ({ content }) => {
 
   return (
     <ul>
-      
+      {childrenWithKeys.map(child => (
+        child.type === 'folder'
+          ? <Folder folder={child} key={child.key} />
+          : <File file={child} key={child.key} />
+      ))}      
     </ul>
   )
 }
