@@ -1,5 +1,11 @@
-@import "Header.css";
+@import "Reset.css";
 
 .App {
-  
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 578px;
+  position: relative;
+  width: 290px;
 }
