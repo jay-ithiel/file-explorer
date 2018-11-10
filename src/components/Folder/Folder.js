@@ -4,8 +4,8 @@ import { AppConsumer } from '../App.context';
 import FolderContent from '../FolderContent';
 
 import { generateToken } from '../../utils';
-import { fileStatus } from '../../constants';
-const { COLLAPSED, EXPANDED } = fileStatus;
+import { FILE_STATUS } from '../../constants';
+const { COLLAPSED, EXPANDED } = FILE_STATUS;
 
 export default class Folder extends React.Component {
   state = {
