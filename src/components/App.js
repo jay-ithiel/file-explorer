@@ -33,7 +33,7 @@ class App extends Component {
     
     return (
       <ResizeableWrapper>
-        <article className="App">
+        <article>
           <AppProvider value={ contextValue }>
             <Header/>
             <RootFolder/>
