@@ -1,15 +1,17 @@
 import * as React from 'react';
 
-const File = ({ file }) => (
-  <li>
-    <div>
-      <FileIcon />
-      <h3>{ file.name }</h3>
-    </div>
-  </li>  
-);
-
-export default File;
+export default class File extends React.Component {
+  render() {
+    return (
+      <li>
+        <div>
+          <FileIcon />
+          <h3>{this.props.file.name}</h3>
+        </div>
+      </li>
+    );
+  }
+}
 
 
 /** Helper Components */
