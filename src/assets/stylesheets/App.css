@@ -1,15 +1,14 @@
 @import "Reset.css";
+@import "Resizeable.css";
 @import "Header.css";
 @import "Folders.css";
 @import "Footer.css";
 
-.App {
+article {
   border: 1px solid #e2e2e2;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   height: 578px;
-  margin: 80px;
   position: relative;
-  width: 290px;
 }

@@ -1,0 +1,31 @@
+.Resizeable {
+  height: 100vh;
+  min-width: 290px;
+  padding: 80px;
+  width: 100vw;
+}
+
+.Resizeable-content {
+  position: relative;
+}
+
+.Resize-bar {
+  bottom: 0;
+  cursor: ew-resize;
+  height: 100%;
+  position: absolute;
+  right: -9px;
+  top: 0;
+  width: 5px;
+
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.Resize-bar > div {
+  height: 40px;
+  width: 1px;
+  border-radius: 3px;
+  background: #afafaf;
+}

@@ -1,4 +1,6 @@
-export const fileStatus = {
+export const DEFAULT_WIDTH = 290;
+
+export const FILE_STATUS = {
   COLLAPSED: 'COLLAPSED',
   EXPANDED: 'EXPANDED',
 };

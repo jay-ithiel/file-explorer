@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/stylesheets/App.css';
 
 import { AppProvider } from './App.context';
-
+import ResizeableWrapper from './Resizeable';
 import Header from './Header';
 import RootFolder from './RootFolder';
 import Footer from './Footer';
@@ -32,13 +32,15 @@ class App extends Component {
     };
     
     return (
-      <div className="App">
-        <AppProvider value={ contextValue }>
-          <Header/>
-          <RootFolder/>
-          <Footer/>
-        </AppProvider>
-      </div>
+      <ResizeableWrapper>
+        <article>
+          <AppProvider value={ contextValue }>
+            <Header/>
+            <RootFolder/>
+            <Footer/>
+          </AppProvider>
+        </article>
+      </ResizeableWrapper>
     );
   }
 
