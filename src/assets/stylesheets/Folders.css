@@ -1,0 +1,51 @@
+section {
+  display: flex;
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+ul { 
+  width: 100%;
+}
+
+li {
+  min-height: 28px;
+  padding-left: 14px;
+}
+
+li div {
+  align-items: center;
+  display: flex;
+  height: 36px;
+  padding: 0 100%;
+  margin: 0 -100%;
+  transition: all .2s ease-in-out;
+}
+
+li div > img {
+  margin-right: 10px;
+  user-select: none;
+}
+
+li div > h3 {
+  font-size: 12px;
+  font-weight: 400;
+  user-select: none;
+  white-space: nowrap;
+}
+
+li > div:hover { 
+  background: rgba(45, 119, 241, 0.3);
+  cursor: pointer;
+}
+
+.active {
+  background: rgba(45, 119, 241, 1);
+  color: #fff;
+}
+
+.active:hover {
+  background: rgba(45, 119, 241, 1);
+}

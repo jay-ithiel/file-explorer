@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   height: 578px;
-  justify-content: space-between;
   margin: 80px;
   position: relative;
   width: 290px;
