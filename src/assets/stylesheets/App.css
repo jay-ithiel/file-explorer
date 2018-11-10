@@ -1,4 +1,5 @@
 @import "Reset.css";
+@import "Resizeable.css";
 @import "Header.css";
 @import "Folders.css";
 @import "Footer.css";
@@ -9,7 +10,5 @@
   display: flex;
   flex-direction: column;
   height: 578px;
-  margin: 80px;
   position: relative;
-  width: 290px;
 }
