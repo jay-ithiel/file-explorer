@@ -17,11 +17,13 @@ const FolderContent = ({ content }) => {
 
   return (
     <ul>
-      {childrenWithKeys.map(child => (
-        child.type === 'folder'
-          ? <Folder folder={child} key={child.key} />
-          : <File file={child} key={child.key} />
-      ))}      
+      {
+        childrenWithKeys.map(child => (
+          child.type === 'folder'
+            ? <Folder folder={ child } key={ child.key } />
+            : <File file={ child } key={ child.key } />
+        ))
+      }      
     </ul>
   )
 }

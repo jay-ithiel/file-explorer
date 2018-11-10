@@ -5,6 +5,7 @@ import FolderContent from '../FolderContent';
 
 import { generateToken } from '../../utils';
 import { FILE_STATUS } from '../../constants';
+
 const { COLLAPSED, EXPANDED } = FILE_STATUS;
 
 export default class Folder extends React.Component {
@@ -18,28 +19,32 @@ export default class Folder extends React.Component {
     const { id, status } = this.state;
     const isPrivateFolder = folder.private;
     const self = this;
+
     return (
       <li>
         <AppConsumer>
-          {({ data, updateActiveId }) => {
-            const activeClass = data.activeId === id ? 'active' : '';
-            const handleClick = () => {
-              updateActiveId(id);
-              self.toggleFolder();
-            };
-            return (
-              <>
-                <div className={ activeClass } onClick={ handleClick }>
-                  { status === COLLAPSED && <ExpandIcon /> }
-                  { status === EXPANDED && <CollapseIcon /> }
-                  { isPrivateFolder && <PrivateFolderIcon /> }
-                  { !isPrivateFolder && <FolderIcon /> }
-                  <h3>{this.props.folder.name}</h3>
-                </div>
-                { status === EXPANDED && <FolderContent content={ folder } /> }
-              </>
-            );
-          }}
+          {
+            ({ data, updateActiveId }) => {
+              const activeClass = data.activeId === id ? 'active' : '';
+              const handleClick = () => {
+                updateActiveId(id);
+                self.toggleFolder();
+              };
+
+              return (
+                <>
+                  <div className={ activeClass } onClick={ handleClick }>
+                    { status === COLLAPSED && <ExpandIcon /> }
+                    { status === EXPANDED && <CollapseIcon /> }
+                    { isPrivateFolder && <PrivateFolderIcon /> }
+                    { !isPrivateFolder && <FolderIcon /> }
+                    <h3>{this.props.folder.name}</h3>
+                  </div>
+                  { status === EXPANDED && <FolderContent content={ folder } /> }
+                </>
+              );
+            }
+          }
         </AppConsumer>
       </li>
     );
