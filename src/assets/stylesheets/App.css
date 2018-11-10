@@ -1,4 +1,5 @@
 @import "Reset.css";
+@import "Header.css";
 
 .App {
   border: 1px solid #e2e2e2;
