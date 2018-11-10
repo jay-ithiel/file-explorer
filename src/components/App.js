@@ -18,9 +18,12 @@ class App extends Component {
    * 'active' styles
    * 
    * Can deploy this logic to keep track of the state of the 
-   * file explorer for the Advanced 'Export' feature
+   * file explorer for the Advanced 'Export' feature. Might
+   * have to abstract child states into this component's state
+   * in order to keep track of each individual folder/file 
+   * component's open/closed/active status
    * 
-   * */
+   */
   state = {
     activeId: '',
   };
