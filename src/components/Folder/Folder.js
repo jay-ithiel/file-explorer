@@ -1,29 +1,46 @@
 import * as React from 'react';
 
+import { AppConsumer } from '../App.context';
 import FolderContent from '../FolderContent';
 
+import { generateToken } from '../../utils';
 import { fileStatus } from '../../constants';
 const { COLLAPSED, EXPANDED } = fileStatus;
 
 export default class Folder extends React.Component {
   state = {
+    id: generateToken(),
     status: COLLAPSED,
   };
 
   render() {
     const { folder } = this.props;
-    const { status } = this.state;
+    const { id, status } = this.state;
     const isPrivateFolder = folder.private;
+    const self = this;
     return (
       <li>
-        <div onClick={ this.toggleFolder }>
-          { status === COLLAPSED && <ExpandIcon /> }
-          { status === EXPANDED && <CollapseIcon /> }
-          { isPrivateFolder && <PrivateFolderIcon /> }
-          { !isPrivateFolder && <FolderIcon /> }
-          <h3>{this.props.folder.name}</h3>
-        </div>
-        { status === EXPANDED && <FolderContent content={ folder } /> }
+        <AppConsumer>
+          {({ data, updateActiveId }) => {
+            const activeClass = data.activeId === id ? 'active' : '';
+            const handleClick = () => {
+              updateActiveId(id);
+              self.toggleFolder();
+            };
+            return (
+              <>
+                <div className={ activeClass } onClick={ handleClick }>
+                  { status === COLLAPSED && <ExpandIcon /> }
+                  { status === EXPANDED && <CollapseIcon /> }
+                  { isPrivateFolder && <PrivateFolderIcon /> }
+                  { !isPrivateFolder && <FolderIcon /> }
+                  <h3>{this.props.folder.name}</h3>
+                </div>
+                { status === EXPANDED && <FolderContent content={ folder } /> }
+              </>
+            );
+          }}
+        </AppConsumer>
       </li>
     );
   }
