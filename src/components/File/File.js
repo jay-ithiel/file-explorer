@@ -1,13 +1,27 @@
 import * as React from 'react';
 
+import { AppConsumer } from '../App.context';
+import { generateToken } from '../../utils';
+
 export default class File extends React.Component {
+  state = { id: generateToken() };
+  
   render() {
+    const { id } = this.state;
     return (
       <li>
-        <div>
-          <FileIcon />
-          <h3>{this.props.file.name}</h3>
-        </div>
+        <AppConsumer>
+          {({ data, updateActiveId }) => {
+            const activeClass = data.activeId === id ? 'active' : '';
+            const handleClick = () => updateActiveId(id);
+            return (
+              <div className={ activeClass } onClick={ handleClick }>
+                <FileIcon />
+                <h3>{ this.props.file.name }</h3>
+              </div>
+            );
+          }}
+        </AppConsumer>
       </li>
     );
   }
