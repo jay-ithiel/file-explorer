@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-const File = () => (
+const File = ({ file }) => (
   <li>
-    <h3>File Name</h3>
+    <h3>{ file.name }</h3>
   </li>  
 );
 

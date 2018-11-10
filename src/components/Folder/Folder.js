@@ -11,7 +11,7 @@ export default class Folder extends React.Component {
   render() {
     return (
       <li>
-        <div>Folder Name</div>
+        <div>{ this.props.folder.name }</div>
       </li>
     );
   }
