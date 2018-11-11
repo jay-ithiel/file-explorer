@@ -14,10 +14,10 @@ export default class ResizeableWrapper extends React.Component {
   render() {
     const style = { minWidth: DEFAULT_WIDTH, width: this.state.width };
     return (
-      <div className="Resizeable" onMouseMove={ this.handleMouseMove } onMouseUp={ this.handleWidthChange } onMouseLeave={ this.handleWidthChange }>
-        <div className="Resizeable-content" style={ style }>
-          { this.props.children }
-          <div className="Resize-bar" onMouseDown={ this.handleMouseDown }>
+      <div className="Resizeable" onMouseMove={this.handleMouseMove} onMouseUp={this.handleWidthChange} onMouseLeave={this.handleWidthChange}>
+        <div className="Resizeable-content" style={style}>
+          {this.props.children}
+          <div className="Resize-bar" onMouseDown={this.handleMouseDown}>
             <div></div>
             <div></div>
           </div>
@@ -42,7 +42,7 @@ export default class ResizeableWrapper extends React.Component {
 
   handleMouseMove = event => {
     event.preventDefault();
-    if (!this.state.dragStartX || !this.state.isDragging) return;
+    if (this.isNotResizing()) return;
     this.setState({
       ...this.state,
       dragEndX: event.pageX,
@@ -52,7 +52,7 @@ export default class ResizeableWrapper extends React.Component {
 
   handleWidthChange = event => {
     event.preventDefault();
-    if (!this.state.dragStartX || !this.state.isDragging) return;
+    if (this.isNotResizing()) return;
     const newWidth = this.calculateWidthChange(event.pageX);
     this.setState({
       ...this.state,
@@ -62,4 +62,6 @@ export default class ResizeableWrapper extends React.Component {
       width: newWidth,
     });
   }
+
+  isNotResizing = () => !this.state.dragStartX || !this.state.isDragging;
 }
