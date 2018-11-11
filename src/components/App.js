@@ -10,7 +10,10 @@ import Footer from './Footer';
 import { FILE_STRUCTURE } from '../data';
 
 class App extends Component {
-  state = generateDefaultState();
+  state = {
+    activeId: '',
+    content: FILE_STRUCTURE,
+  };
 
   render() {
     const { activeId, content } = this.state;
@@ -42,13 +45,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/** Helper Functions */
-
-function generateDefaultState() {
-  return {
-    activeId: '',
-    content: FILE_STRUCTURE,
-  };
-}

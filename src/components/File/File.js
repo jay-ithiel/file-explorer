@@ -6,7 +6,7 @@ import { FileIcon } from '../Icons';
 const File = ({ file, handleClick }) => (
   <AppConsumer>
     {
-      ({ activeId, updateActiveId }) => {
+      ({ activeId }) => {
         const activeClass = activeId === file.id ? 'active' : '';
         return (
           <div className={activeClass} onClick={handleClick}>

@@ -11,7 +11,7 @@ const { COLLAPSED, EXPANDED } = FOLDER_STATUS;
 const Folder = ({ folder, handleClick, saveState }) => (
   <AppConsumer>
     {
-      ({ activeId, _ }) => {
+      ({ activeId }) => {
         const { id, status } = folder;
         const isPrivateFolder = folder.private;
         const activeClass = activeId === id ? 'active' : '';
