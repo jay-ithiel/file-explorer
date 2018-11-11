@@ -18,38 +18,38 @@ class FolderContent extends React.Component {
     const { children } = this.state;
     if (!children) return <ul></ul>;
     return (
-      <ul>
-        <AppConsumer>
-          {
-            ({ _, updateActiveId, updateFileExplorerState }) => (
-              <>
-                {
-                  children.map(child => {                    
-                    const handleClick = () => {
-                      updateActiveId(child.id);
-                      this.toggleFolder(child);
-                      if (isRoot) return;
-                      saveState({ child, parentId, updateFileExplorerState });
-                    };
-                    return (child.type === FILE) ? (
+      <AppConsumer>
+        {
+          ({ _, updateActiveId, updateFileExplorerState }) => (
+            <ul>
+              {
+                children.map(child => {                    
+                  const handleClick = () => {
+                    updateActiveId(child.id);
+                    this.toggleFolder(child);
+                    if (isRoot) return;
+                    saveState({ child, parentId, updateFileExplorerState });
+                  };
+                  return (child.type === FILE) ? (
+                    <li key={child.index}>
                       <File
-                        file={ child }
-                        handleClick={ () => updateActiveId(child.id) }
-                        key={ child.index } />
-                    ) : (
+                        file={child}
+                        handleClick={() => updateActiveId(child.id)} />
+                    </li>
+                  ) : (
+                    <li key={child.index}>
                       <Folder
-                        folder={ child }
-                        handleClick={ handleClick }
-                        key={ child.index }
-                        saveState={ this.saveState } /> 
-                    );
-                  })
-                }
-              </>
-            )
-          }
-        </AppConsumer>
-      </ul>
+                        folder={child}
+                        handleClick={handleClick}
+                        saveState={this.saveState} /> 
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          )
+        }
+      </AppConsumer>
     );
   }
 

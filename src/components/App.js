@@ -15,17 +15,17 @@ class App extends Component {
   render() {
     const { activeId, content } = this.state;
     const contextValue = {
-      activeId: this.state.activeId,
+      activeId,
       updateActiveId: this.updateActiveId,
       updateFileExplorerState: this.updateFileExplorerState,
     };
     return (
       <ResizeableWrapper>
         <article>
-          <AppProvider value={ contextValue }>
+          <AppProvider value={contextValue}>
             <Header/>
             <section>
-              <FolderContent content={ content } isRoot={ true } />
+              <FolderContent content={content} isRoot={true} />
             </section>
             <Footer/>
           </AppProvider>
