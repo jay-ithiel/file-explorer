@@ -5,7 +5,7 @@ header {
   flex: 0 1 auto;
   height: 86px;
   min-height: 86px;
-  pointer-events: none;
+  position: relative;
   user-select: none;
   width: 100%;
 }
@@ -35,4 +35,21 @@ header > h3 {
   min-height: 38px;
   padding: 0 14px;
   width: 100%;
+}
+
+header > div {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+}
+
+header > img {
+  height: 12px;
+  width: 12px;
 }
