@@ -4,42 +4,33 @@ import '../assets/stylesheets/App.css';
 import { AppProvider } from './App.context';
 import ResizeableWrapper from './Resizeable';
 import Header from './Header';
-import RootFolder from './RootFolder';
+import FolderContent from './FolderContent';
 import Footer from './Footer';
 
+import { FILE_STRUCTURE } from '../data';
+
 class App extends Component {
-  /**
-   * Each file/folder has a unique 'id'. When clicked,
-   * updateActiveId will be invoked, setting state.activeId
-   * to the id of the file/folder that was clicked.
-   * 
-   * On the file/folder level, if the activeId matches its
-   * id, it will be toggled as 'active', giving it the
-   * 'active' styles
-   * 
-   * Can deploy this logic to keep track of the state of the 
-   * file explorer for the Advanced 'Export' feature. Might
-   * have to abstract child states into this component's state
-   * in order to keep track of each individual folder/file 
-   * component's open/closed/active status
-   * 
-   */
   state = {
     activeId: '',
+    fileExplorerState: null,
   };
   
   render() {
     const contextValue = {
-      data: this.state,
+      activeId: this.state.activeId,
       updateActiveId: this.updateActiveId,
+      updateFileExplorerState: this.updateFileExplorerState,
     };
+    const content = this.state.fileExplorerState || FILE_STRUCTURE;
     
     return (
       <ResizeableWrapper>
         <article>
           <AppProvider value={ contextValue }>
             <Header/>
-            <RootFolder/>
+            <section>
+              <FolderContent content={content} isRoot={true} />
+            </section>
             <Footer/>
           </AppProvider>
         </article>
@@ -48,6 +39,10 @@ class App extends Component {
   }
 
   updateActiveId = activeId => this.setState({ activeId });
+
+  updateFileExplorerState = newState => {
+    this.setState({ fileExplorerState: newState });
+  };
 }
 
 export default App;
