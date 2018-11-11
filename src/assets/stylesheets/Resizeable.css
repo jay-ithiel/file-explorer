@@ -10,22 +10,21 @@
 }
 
 .Resize-bar {
+  align-items: center;
   bottom: 0;
   cursor: ew-resize;
-  height: 100%;
-  position: absolute;
-  right: -9px;
-  top: 0;
-  width: 5px;
-
-  align-items: center;
-  justify-content: space-between;
   display: flex;
+  height: 100%;
+  justify-content: space-around;
+  position: absolute;
+  right: 2px;
+  top: 0;
+  width: 9px;
+  z-index: 1;
 }
 
 .Resize-bar > div {
   height: 40px;
   width: 1px;
-  border-radius: 3px;
-  background: #afafaf;
+  background: #c5c5c5;
 }
