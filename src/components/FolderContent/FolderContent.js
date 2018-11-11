@@ -68,7 +68,7 @@ class FolderContent extends React.Component {
   };
 
   toggleFolder = child => {
-    const { children, idToIndex } = this.state;
+    const { children } = this.state;
     child.status = child.status === COLLAPSED ? EXPANDED : COLLAPSED;
     children[child.index] = child;
     this.setState({
