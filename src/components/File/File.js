@@ -4,21 +4,19 @@ import { AppConsumer } from '../App.context';
 import { FileIcon } from '../Icons';
 
 const File = ({ file, handleClick }) => (
-  <li>
-    <AppConsumer>
-      {
-        ({ activeId, updateActiveId }) => {
-          const activeClass = activeId === file.id ? 'active' : '';
-          return (
-            <div className={ activeClass } onClick={ handleClick }>
-              <FileIcon />
-              <h3>{ file.name }</h3>
-            </div>
-          );
-        }
+  <AppConsumer>
+    {
+      ({ activeId, updateActiveId }) => {
+        const activeClass = activeId === file.id ? 'active' : '';
+        return (
+          <div className={activeClass} onClick={handleClick}>
+            <FileIcon />
+            <h3>{file.name}</h3>
+          </div>
+        );
       }
-    </AppConsumer>
-  </li>
+    }
+  </AppConsumer>
 );
 
 export default File;
