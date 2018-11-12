@@ -1,6 +1,8 @@
 This is a simple file explorer app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993056/Screen_Shot_2018-11-11_at_7.22.25_PM_ct9ady.png)
+![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993058/Screen_Shot_2018-11-11_at_7.22.52_PM_wtzihc.png)
+![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993057/Screen_Shot_2018-11-11_at_7.23.02_PM_uvcc4m.png)
 
 ## Available Scripts
 
