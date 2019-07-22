@@ -1,8 +1,18 @@
-This is a simple file explorer app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple file explorer app I built for fun on a lazy Saturday afternoon, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993056/Screen_Shot_2018-11-11_at_7.22.25_PM_ct9ady.png)
+
+It features an accordion structure so that users can click to expand & collapse a folder to examine its contents
+
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993058/Screen_Shot_2018-11-11_at_7.22.52_PM_wtzihc.png)
+
+
+I ran into a UI/UX problem while building the app. When displaying a file or folder with an extremely long name, the name got cut off preventing the user from seeing the whole name. I first made a simple solution that allows the user to scroll sideways, which worked, but I wanted to make it better.
+
+I looked around for a simple `Resizeable` component package I could plug and play, but I couldn't find any that I liked. So I created a custom `Resizeable` Higher Order Component (HOC) that features a simple & universal click-and-drag functionality that allows the user to resize the app
+
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993057/Screen_Shot_2018-11-11_at_7.23.02_PM_uvcc4m.png)
+
 
 ## Available Scripts
 
