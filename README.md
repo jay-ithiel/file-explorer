@@ -1,4 +1,4 @@
-This is a simple file explorer app I built for fun on a lazy Saturday afternoon, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple file explorer app I built for fun, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993056/Screen_Shot_2018-11-11_at_7.22.25_PM_ct9ady.png)
 
