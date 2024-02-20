@@ -7,9 +7,7 @@ It features an accordion structure so that users can click to expand & collapse 
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993058/Screen_Shot_2018-11-11_at_7.22.52_PM_wtzihc.png)
 
 
-There was a UI/UX problem that arose while building the app. When displaying a file or folder with an extremely long name, the name would get cut off. I first made a simple solution that allowed the user to scroll sideways which worked, but wasn't a great user experience. I wanted to polish it.
-
-I looked around for a simple `Resizeable` component package I could plug and play but I couldn't find any that I liked, so I created a custom `Resizeable` React Higher Order Component (HOC) that features a simple & universal click-and-drag functionality that allows the user to resize the app however they want.
+I couldn't find a simple Resizeable library that I liked, so I created a custom `Resizeable` React Higher Order Component (HOC) that features a simple & universal click-and-drag functionality that allows the user to resize the app however they want.
 
 ![file-explorer](https://res.cloudinary.com/ddgtwtbre/image/upload/v1541993057/Screen_Shot_2018-11-11_at_7.23.02_PM_uvcc4m.png)
 
